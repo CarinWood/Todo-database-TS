@@ -9,7 +9,7 @@ const TodoList = () => {
 
 
    const getTodos = () =>  {
-        TodoApiService.getAllTodos
+        TodoApiService.getAllTodos()
         .then((response) => {
             console.log(response.data)
         })
@@ -21,7 +21,7 @@ const TodoList = () => {
         <div className='todo-list'>
             <InputArea/>
             <button onClick={() => getTodos()}>Get Todos</button>
-          
+    
         </div>
     )
 }
