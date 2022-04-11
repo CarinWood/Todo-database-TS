@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './todoList.css'
 import InputArea from '../inputArea/InputArea';
 import TodoApiService from '../../api/services/TodoApiService';
+
 
 const TodoList = () => {
     const [todos, setTodos] = useState([])
@@ -9,16 +10,12 @@ const TodoList = () => {
 
    const getTodos = () =>  {
         TodoApiService.getAllTodos
-        .then((response: any) => {
+        .then((response) => {
             console.log(response.data)
         })
-        .catch((error: any) => console.log(error))
+        .catch((error) => console.log(error))
     }
     
-  
-    
-
-   
 
     return (
         <div className='todo-list'>
