@@ -17,6 +17,97 @@ const createTodo = async (req, res) => {
         }
 }
 
+const getAllTodos = async (req, res) => {
+
+    try {
+    const response = await TodoModel.find()
+    res.status(200).send(response)
+    } 
+    
+    catch(error) 
+    {
+        res.status(500).send({message: error.message})
+    }
+
+}
+
+const getCompletedTodos = async (req, res) => {
+    try {
+        const response = await TodoModel.find({done: 'true'})
+        res.status(200).send(response)
+       
+    }
+
+    catch(error) {
+        res.status(500).send({message: error.message})
+    }
+}
+const getUncompletedTodos = async (req, res) => {
+    try {
+        const response = await TodoModel.find({done: 'false'})
+        res.status(200).send(response)
+    }
+
+    catch(error) {
+        res.status(500).send({message: error.message})
+    }
+}
+
+
+const updateTask = async (req,res) => {
+    try {
+        await TodoModel.findByIdAndUpdate(req.params.todoId, {
+            task: req.body.task
+        }, {new: true})
+       
+        const response = await TodoModel.find()
+        res.status(200).send(response)
+    } 
+    
+    catch(error) {
+        res.status(500).send({message: error.message})
+    }
+}
+
+const updateDone = async (req, res) => {
+    try {
+        await TodoModel.findByIdAndUpdate(req.params.todoId, {
+            done: req.body.done
+        }, {new: true})
+        const response = await TodoModel.find()
+        res.status(200).send(response)
+    }
+
+    catch(error) {
+        res.status(500).send({message: error.message})
+    }
+}
+
+
+const deleteTodo = async (req, res) => {
+    try {
+        await TodoModel.findByIdAndDelete(req.params.todoId)
+        const response = await TodoModel.find()
+        res.status(201).send(response)
+
+    } catch(error) {
+        res.status(500).send({
+            message: error.message
+        })
+
+    }
+}
+
+
+
 export default {
-    createTodo
+    createTodo,
+    getAllTodos,
+    getCompletedTodos,
+    getUncompletedTodos,
+    updateTask,
+    updateDone,
+    deleteTodo,
+
+
 }
