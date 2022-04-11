@@ -12,9 +12,12 @@ interface Props {
 const Card:React.FC<Props> = ({task, name, done}) => {
   return (
     <div className='card'>
-        <IoClose className='close'/>
-        <h2>{task}</h2>
-        <h3>{name}</h3>
+        <div className='card-header'>
+            <IoClose className='close'/>
+        </div>
+        
+        <h2 className='task-text'>{task}</h2>
+        <h3 className='name-text'>{name}</h3>
     </div>
   )
 }
