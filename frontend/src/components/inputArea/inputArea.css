@@ -1,6 +1,5 @@
 .input-container {
     width: 400px;
-    height: 100vh;
     margin: 0px;
     background-color: var(--side-color);
     position: absolute;
@@ -20,4 +19,42 @@
     text-transform: uppercase;
     font-size: 25px;
     opacity: 0.8;
+}
+
+.input-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.input-task, .input-name {
+    font-family: 'Roboto';
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.input-task {
+    margin-bottom: 25px;
+}
+
+.add-btn {
+    background-color: transparent;
+    font-family: 'Roboto';
+    border: 2px solid white;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.add-btn:active {
+    transform: translateY(2px);
 }
