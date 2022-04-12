@@ -11,6 +11,7 @@
     opacity: 0.7;
     border-radius: 4px;
     position: relative;
+    margin: 12px 0px 12px 25px;
 }
 
 .card-header {
@@ -28,11 +29,23 @@
     color: var(--side-color);
 }
 
+.close-area {
+    width: 45px;
+    height: 5vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-area:hover {
+    background-color: #d34f23;
+}
+
 .close {
     color: white;
     font-size: 30px;
-    position: absolute;
-    right: 2%;
-    top: 2%;
     cursor: pointer
 }

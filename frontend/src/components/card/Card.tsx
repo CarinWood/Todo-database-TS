@@ -13,7 +13,9 @@ const Card:React.FC<Props> = ({task, name, done}) => {
   return (
     <div className='card'>
         <div className='card-header'>
-            <IoClose className='close'/>
+              <div className='close-area'>
+                    <IoClose className='close'/>
+              </div>
         </div>
         
         <h2 className='task-text'>{task}</h2>
