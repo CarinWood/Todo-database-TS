@@ -13,6 +13,7 @@ const TodoList = () => {
         task: string
         name: string
         done: string
+        _id: string
     }
 
 
@@ -33,7 +34,7 @@ const TodoList = () => {
 
             <div className="cards">
                     {todos.length > 0
-                    ? todos.map((todo:Todo) => <Card task={todo.task} name={todo.name} done={todo.done}/>)
+                    ? todos.map((todo:Todo) => <Card id={todo._id} task={todo.task} name={todo.name} done={todo.done}/>)
                     : <Placeholder/> }
              </div>
     
