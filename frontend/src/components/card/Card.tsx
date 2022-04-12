@@ -1,7 +1,10 @@
 import './card.css'
 import { IoClose } from 'react-icons/io5';
-import TodoApiService from '../../api/services/TodoApiService'
 import {useState} from 'react'
+import { BsCheckLg } from "react-icons/bs";
+import EditWindow from '../editWindow/EditWindow';
+
+
 
 interface Props {
       task: string
@@ -16,13 +19,20 @@ interface Props {
 const Card:React.FC<Props> = ({task, name, done, id, deleteTodo}) => {
 
 const [showMenu, setShowMenu] = useState(false)
+const [showEditWindow, setShowEditWindow] = useState(false)
+
 
 const menuClick = () => {
   setShowMenu(!showMenu)
-  console.log(showMenu)
+
 }
+
+const openWindow = () => {
+  setShowEditWindow(true)
+} 
+
   
-  
+
 
 
   return (
@@ -38,13 +48,14 @@ const menuClick = () => {
             
         </div>
         {showMenu === true && <section className='menu'>
-          <p>Edit Task</p>
-          <p>Mark as Completed</p>
-          <p>Mark as Uncompleted</p>
+          <p className="completed"><BsCheckLg className="red-check"/> Mark as Completed</p>
+          <p className='uncompleted'><BsCheckLg className="green-check"/> Mark as Uncompleted</p>
         </section>}
         
-        <h2 className='task-text'>{task}</h2>
+        <h2 className='task-text' onClick={() =>openWindow()}>{task}</h2>
         <h3 className='name-text'>{name}</h3>
+
+        {showEditWindow === true && <EditWindow task={task}/>}
     </div>
   )
 }

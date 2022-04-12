@@ -8,7 +8,7 @@
     background-color: var(--background);
     color: white;
     margin-right: 20px;
-    opacity: 0.7;
+    opacity: 0.9;
     border-radius: 4px;
     position: relative;
     margin: 12px 0px 12px 25px;
@@ -23,6 +23,7 @@
 
 .task-text {
     color: var(--side-color);
+    cursor: pointer;
 }
 
 .name-text {
@@ -71,8 +72,29 @@
     position: absolute;
     top: 15%;
     left: 0;
-    width: 290px;
-    height: 20vh;
+    width: 280px;
+    height: 12vh;
     background-color: var(--side-color);
+    padding-left: 10px;
+}
+
+.uncompleted, .completed {
+    font-size: 15px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.red-check {
+    color: pink;
+    margin-right: 10px;
+}
+
+.green-check {
+    color: teal;
+    margin-right: 10px;
 }
 
