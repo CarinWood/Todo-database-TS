@@ -7,22 +7,17 @@ interface Props {
       name: string
       done: string
       id: string
+      deleteTodo: (id: string) => void
     
 
     }
 
 
 
-const Card:React.FC<Props> = ({task, name, done, id}) => {
+const Card:React.FC<Props> = ({task, name, done, id, deleteTodo}) => {
 
 
-  const deleteTodo = (id: string) => {
-    TodoApiService.deleteTodo(id)
-    .then(response => {
-      console.log(response.data)
-    })
-    .catch(error => console.log(error))
-  }
+  
   
 
 

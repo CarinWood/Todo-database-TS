@@ -17,24 +17,38 @@ const TodoList = () => {
     }
 
 
-   const getTodos = () =>  {
-        TodoApiService.getAllTodos()
-        .then((response) => {
-            setTodos(response.data)
+    const deleteTodo = (id: string) => {
+        TodoApiService.deleteTodo(id)
+        .then(response => {
+          setTodos(response.data)
         })
-        .catch((error) => console.log(error))
+        .catch(error => console.log(error))
+      }
+
+
+    const addNewTodo = (value1: string, value2: string) => {
+            const newTodo = {
+                task: value1,
+                name: value2,
+                done: "false"
+            }
+
+            TodoApiService.addNewTodo(newTodo)
+            .then(response => {
+                setTodos(response.data)
+            })
+            .catch(error => console.log(error))
     }
     
     
 
     return (
         <div className='todo-list'>
-            <InputArea/>
-            <button onClick={() => getTodos()}>Get Todos</button>
+            <InputArea addNewTodo={addNewTodo} />
 
             <div className="cards">
                     {todos.length > 0
-                    ? todos.map((todo:Todo) => <Card id={todo._id} task={todo.task} name={todo.name} done={todo.done}/>)
+                    ? todos.map((todo:Todo) => <Card id={todo._id} task={todo.task} name={todo.name} done={todo.done} deleteTodo={deleteTodo}/>)
                     : <Placeholder/> }
              </div>
     
