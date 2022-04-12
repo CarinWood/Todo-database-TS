@@ -15,9 +15,10 @@
 
 .todo-heading {
     color: var(--text-color);
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 33px;
+    font-weight: 900;
     opacity: 0.8;
 }
 
@@ -27,6 +28,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 60px;
+    position: relative;
 }
 
 .input-task, .input-name {
@@ -34,7 +36,6 @@
     font-size: 20px;
     padding: 5px;
     border-radius: 5px;
-    
 }
 
 .input-task {
@@ -59,3 +60,4 @@
 .add-btn:active {
     transform: translateY(2px);
 }
+
