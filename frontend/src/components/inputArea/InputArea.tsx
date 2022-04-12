@@ -1,7 +1,7 @@
 import React, {FC, useState} from 'react'
 import './inputArea.css'
-import { BsPencilFill } from 'react-icons/bs';
-import { IoClose } from 'react-icons/io5';
+import { BsPencilFill, BsSearch } from 'react-icons/bs';
+
 
 interface Props {
   addNewTodo: (value1: string, value2: string) => void;
@@ -11,6 +11,7 @@ const InputArea:FC<Props> = ({addNewTodo}) => {
 
     const [taskValue, setTaskValue] = useState('')
     const [nameValue, setNameValue] = useState('')
+    const [searchText, setSearchText] = useState('')
 
     const handleClick = () => {
       addNewTodo(taskValue, nameValue);
@@ -22,7 +23,7 @@ const InputArea:FC<Props> = ({addNewTodo}) => {
 
   return (
     <div className="input-container">
-        <h1 className='todo-heading'>Todo List <BsPencilFill/></h1>
+        <h1 className='todo-heading'>Add todo <BsPencilFill/></h1>
             <div className="input-fields">
                  
                         <input 
@@ -44,6 +45,16 @@ const InputArea:FC<Props> = ({addNewTodo}) => {
 
                 <button className="add-btn" onClick={()=> handleClick()}>Add Todo</button>
             </div>
+
+            <p className="search">Search <BsSearch/></p>
+            <input 
+                className='search-field'
+                placeholder="Enter name"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+            />
+
+          
         
     </div>
   )

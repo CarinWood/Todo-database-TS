@@ -11,6 +11,10 @@ const TodoApiService = {
 
     addNewTodo: (newTodo: object) => {
         return http.post('/todo', newTodo)
+    },
+
+    updateTask: (id: string, newTask: object) => {
+        return http.put(`/todo/${id}`, newTask)
     }
 }
 

@@ -42,6 +42,20 @@ const TodoList = () => {
             .catch(error => console.log(error))
     }
 
+
+    
+  const updateTask = (_id: string, _newTask: string) => {
+    const _task = {
+        'task': _newTask
+    }
+
+    TodoApiService.updateTask(_id, _task)
+    .then(response => {
+        setTodos(response.data)
+    })
+    .catch(error => console.log(error))
+}
+
   
     
 
@@ -53,7 +67,7 @@ const TodoList = () => {
 
             <div className="cards">
                     {todos.length > 0
-                    ? todos.map((todo:Todo) => <Card id={todo._id} task={todo.task} name={todo.name} done={todo.done} deleteTodo={deleteTodo} />)
+                    ? todos.map((todo:Todo) => <Card id={todo._id} task={todo.task} name={todo.name} done={todo.done} deleteTodo={deleteTodo} updateTask={updateTask}/>)
                     : <Placeholder/> }
 
                     

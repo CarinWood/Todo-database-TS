@@ -12,14 +12,19 @@ interface Props {
       done: string
       id: string
       deleteTodo: (id: string) => void
+      updateTask: (id: string, newTask: string) => void
     }
 
 
 
-const Card:React.FC<Props> = ({task, name, done, id, deleteTodo}) => {
+const Card:React.FC<Props> = ({task, name, done, id, deleteTodo, updateTask}) => {
 
 const [showMenu, setShowMenu] = useState(false)
 const [showEditWindow, setShowEditWindow] = useState(false)
+const [pink, setPink] = useState(false)
+const [purple, setPurple] = useState(false)
+const [blue, setBlue] = useState(false)
+const [green, setGreen] = useState(false)
 
 
 const menuClick = () => {
@@ -28,8 +33,39 @@ const menuClick = () => {
 }
 
 const openWindow = () => {
-  setShowEditWindow(true)
+  setShowEditWindow(!showEditWindow)
 } 
+
+
+const chooseGreen = () => {
+  setGreen(true)
+  setPurple(false)
+  setPink(false)
+  setBlue(false)
+}
+
+
+const choosePurple = () => {
+  setPurple(true)
+  setGreen(false)
+  setPink(false)
+  setBlue(false)
+}
+
+const choosePink = () => {
+  setPink(true)
+  setPurple(false)
+  setGreen(false)
+  setBlue(false)
+}
+
+const chooseBlue = () => {
+  setBlue(true)
+  setPink(false)
+  setPurple(false)
+  setGreen(false)
+}
+
 
   
 
@@ -48,14 +84,16 @@ const openWindow = () => {
             
         </div>
         {showMenu === true && <section className='menu'>
-          <p className="completed"><BsCheckLg className="red-check"/> Mark as Completed</p>
-          <p className='uncompleted'><BsCheckLg className="green-check"/> Mark as Uncompleted</p>
+          <div className='color-div'><section className='box' onClick={() => choosePink()}>{pink && <BsCheckLg className='check'/>}</section><p className='color pink'>Pink</p></div>
+          <div className='color-div'><section className='box' onClick={() => chooseGreen()}>{green && <BsCheckLg className='check'/>}</section><p className='color green'>Green</p></div>
+          <div className='color-div'><section className='box' onClick={() => choosePurple()}>{purple && <BsCheckLg className='check'/>}</section><p className='color purple'>Purple</p></div>
+          <div className='color-div'><section className='box'  onClick={() => chooseBlue()}>{blue && <BsCheckLg className='check'/>}</section><p className='color blue'>Blue</p></div>
         </section>}
         
         <h2 className='task-text' onClick={() =>openWindow()}>{task}</h2>
         <h3 className='name-text'>{name}</h3>
 
-        {showEditWindow === true && <EditWindow task={task}/>}
+        {showEditWindow === true && <EditWindow task={task} id={id} updateTask={updateTask} openWindow={openWindow}/>}
     </div>
   )
 }

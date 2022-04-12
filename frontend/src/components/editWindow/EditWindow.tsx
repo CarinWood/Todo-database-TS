@@ -1,23 +1,39 @@
 import './editWindow.css'
+import {useState} from 'react'
+import TodoApiService from '../../api/services/TodoApiService'
 
 interface Props {
     task: string
+    id: string
+    updateTask: (id: string, newTask: string) => void
+    openWindow: () => void
+
 }
 
 
-const EditWindow: React.FC<Props> = ({task}) => {
+
+
+const EditWindow: React.FC<Props> = ({task, id, updateTask, openWindow}) => {
+
+    const [newTask, setNewTask] = useState(task)
+
+    const handleButtonClick = () => {
+            updateTask(id, newTask)
+            openWindow()
+    }
+
   return (
-    <div className='window'>
-        <p className='edit-text'>Edit Todo Task:</p>
+    <>
         <input 
-            placeholder={task}
             type="text"
             className='edit-input'
+            value={newTask}
+            onChange={(e) => setNewTask(e.target.value)}
 
         />
-        <button className='done-btn'>Done</button>
+        <button className='done-btn' onClick={() => handleButtonClick()}>Done</button>
         
-    </div>
+    </>
   )
 }
 
