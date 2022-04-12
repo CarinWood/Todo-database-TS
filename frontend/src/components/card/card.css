@@ -40,7 +40,7 @@
     align-items: center;
 }
 
-.close-area:hover {
+.close-area:hover, .dot-area:hover {
     background-color: #d34f23;
 }
 
@@ -49,3 +49,30 @@
     font-size: 30px;
     cursor: pointer
 }
+
+.dot-area {
+    width: 45px;
+    height: 5vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    font-size: 22px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+}
+
+.menu {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 290px;
+    height: 20vh;
+    background-color: var(--side-color);
+}
+
