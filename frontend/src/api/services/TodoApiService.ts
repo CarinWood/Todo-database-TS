@@ -37,6 +37,10 @@ const TodoApiService = {
         return http.get('/completed', done)
     },
 
+    getUncompleted: (done: object) => {
+        return http.get('/uncompleted', done)
+    },
+
     getAll: () => {
         return http.get('/todo')
     }

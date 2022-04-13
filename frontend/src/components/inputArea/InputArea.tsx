@@ -7,10 +7,11 @@ interface Props {
   addNewTodo: (value1: string, value2: string) => void;
   getAllCompleted: () => void; 
   getAll: () => void
+  getAllUnompleted: () => void
   
 }
 
-const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll}) => {
+const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnompleted}) => {
 
     const [taskValue, setTaskValue] = useState('')
     const [nameValue, setNameValue] = useState('')
@@ -28,12 +29,14 @@ const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll}) => {
     const searchForCompleted = () => {
         setCompleted(true)
         setAll(false)
+        setUncompleted(false)
         getAllCompleted()
     }
 
     const searchForAll = () => {
       setAll(true)
       setCompleted(false)
+      setUncompleted(false)
       getAll()
 
     }
@@ -42,7 +45,7 @@ const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll}) => {
       setAll(false)
       setCompleted(false)
       setUncompleted(true)
-      
+      getAllUnompleted()
 
     }
 
@@ -79,7 +82,7 @@ const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll}) => {
             <section className='box-area'>
             <div className='all-div'><section className='checkbox' onClick={() => searchForAll()}>{all && <BsCheckLg className="checkmark"/>}</section><p className='all-choice'>All</p></div>
             <div className='completed-div'><section className='checkbox'onClick={() => searchForCompleted()}>{completed && <BsCheckLg className="checkmark"/>}</section><p className='completed-choice'>Completed</p></div>
-            <div className='uncompleted-div'><section className='checkbox' onClick={() => searchForUncompleted()}></section><p className='uncompleted-choice'>Uncompleted</p></div>
+            <div className='uncompleted-div'><section className='checkbox' onClick={() => searchForUncompleted()}>{uncompleted && <BsCheckLg className="checkmark"/>}</section><p className='uncompleted-choice'>Uncompleted</p></div>
             </section>
            
 

@@ -119,6 +119,17 @@ const chooseColor = (id: string, choosenColor: string) => {
       })
       .catch(error => console.log(error))
   }
+  const getAllUnompleted = () => {
+      const done = {
+        "done": "false"
+      }
+     
+      TodoApiService.getUncompleted(done) 
+      .then(response => {
+        setTodos(response.data)
+      })
+      .catch(error => console.log(error))
+  }
 
   const getAll = () => {
 
@@ -135,7 +146,7 @@ const chooseColor = (id: string, choosenColor: string) => {
 
     return (
         <div className='todo-list'>
-            <InputArea addNewTodo={addNewTodo} getAllCompleted={getAllCompleted} getAll={getAll}/>
+            <InputArea addNewTodo={addNewTodo} getAllCompleted={getAllCompleted} getAll={getAll} getAllUnompleted={getAllUnompleted}/>
 
             <div className="cards">
                     {todos.length > 0
