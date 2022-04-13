@@ -56,15 +56,27 @@ const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnomple
     const selectHandler = (selectValue: string) => {
           if (selectValue === '1') {
             getPeach()
+            setAll(false)
+            setCompleted(false)
+            setUncompleted(false)
 
           } else if (selectValue === '2') {
             getGreen()
+            setAll(false)
+            setCompleted(false)
+            setUncompleted(false)
 
           } else if (selectValue === '3') {
             getYellow()
+            setAll(false)
+            setCompleted(false)
+            setUncompleted(false)
 
           } else if (selectValue === '4') {
             getBlue()
+            setAll(false)
+            setCompleted(false)
+            setUncompleted(false)
           }
 
 

@@ -123,9 +123,7 @@ const setUncompletedFunc = () => {
   setUncompleted(true)
   setCompleted(false)
   setShowMenu(false)
-  setTodoUncompleted(id)
-  
-  
+  setTodoUncompleted(id) 
 }
 
 
