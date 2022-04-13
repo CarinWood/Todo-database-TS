@@ -54,7 +54,7 @@
     margin-top: 30px;
     margin-bottom: 30px;
     cursor: pointer;
-    width: 150px;
+    width: 120px;
 }
 
 .add-btn:active {
@@ -101,6 +101,52 @@
 
 .magnifyer {
     margin-left: 10px;
+}
+
+.all-div, .completed-div, .uncompleted-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.all-choice, .completed-choice, .uncompleted-choice {
+    font-size: 20px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+}
+
+.box-area {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 50px;
+    width: 330px;
+}
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+    border: 1px solid white;
+    margin-right: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.all-div {
+    margin-right: 50px;
+}
+
+.checkmark {
+    color: white;
+    font-size: 24px;
+    font-weight: 200;
+    position: absolute;
+    margin-bottom: 7px;
 }
 
 

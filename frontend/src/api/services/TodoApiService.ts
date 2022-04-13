@@ -27,6 +27,18 @@ const TodoApiService = {
 
     searchByName: (_name: object) => {
         return http.get('/name', _name)
+    },
+
+    updateDone: (id: string, done: object) => {
+        return http.put(`/done/${id}`, done)
+    },
+
+    getDone: (done: object) => {
+        return http.get('/completed', done)
+    },
+
+    getAll: () => {
+        return http.get('/todo')
     }
 
 

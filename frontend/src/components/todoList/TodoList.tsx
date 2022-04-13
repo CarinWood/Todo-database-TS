@@ -84,17 +84,62 @@ const chooseColor = (id: string, choosenColor: string) => {
     .catch(error => console.log(error))
   }
 
+  const setTodoCompleted = (id: string) => {
+    const done = {
+      "done": "true"
+    }
+    TodoApiService.updateDone(id, done)
+    .then(response => {
+      setTodos(response.data)
+    })
+    .catch(error => console.log(error))
+
+  }
+  const setTodoUncompleted = (id: string) => {
+    const done = {
+      "done": "false"
+    }
+    TodoApiService.updateDone(id, done)
+    .then(response => {
+      setTodos(response.data)
+    })
+    .catch(error => console.log(error))
+
+  }
+
+
+  const getAllCompleted = () => {
+      const done = {
+        "done": "true"
+      }
+     
+      TodoApiService.getDone(done) 
+      .then(response => {
+        setTodos(response.data)
+      })
+      .catch(error => console.log(error))
+  }
+
+  const getAll = () => {
+
+    TodoApiService.getAll()
+    .then(response => {
+      setTodos(response.data)
+    })
+    .catch(error => console.log(error))
+  }
+
    
   
     
 
     return (
         <div className='todo-list'>
-            <InputArea addNewTodo={addNewTodo}/>
+            <InputArea addNewTodo={addNewTodo} getAllCompleted={getAllCompleted} getAll={getAll}/>
 
             <div className="cards">
                     {todos.length > 0
-                    ? todos.map((todo:Todo) => <Card id={todo._id} task={todo.task} name={todo.name} done={todo.done} color={todo.color} deleteTodo={deleteTodo} updateTask={updateTask} updateName={updateName} chooseColor={chooseColor}/>)
+                    ? todos.map((todo:Todo) => <Card id={todo._id} task={todo.task} name={todo.name} done={todo.done} color={todo.color} deleteTodo={deleteTodo} updateTask={updateTask} updateName={updateName} chooseColor={chooseColor} setTodoCompleted={setTodoCompleted} setTodoUncompleted={setTodoUncompleted}/>)
                     : <Placeholder/> }
 
                     
