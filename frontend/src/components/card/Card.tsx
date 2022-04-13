@@ -18,20 +18,25 @@ interface Props {
       updateTask: (id: string, newTask: string) => void
       chooseColor: (id: string, choosenColor: string) => void
       updateName: (id: string, newName: string) => void
+      setTodoCompleted: (id: string) => void
+      setTodoUncompleted: (id: string) => void
      
 }
 
 
 
-const Card:React.FC<Props> = ({task, name, done, id, deleteTodo, updateTask, color, chooseColor, updateName}) => {
+const Card:React.FC<Props> = ({task, name, done, id, deleteTodo, updateTask, color, chooseColor, updateName, setTodoCompleted, setTodoUncompleted}) => {
 
 const [showMenu, setShowMenu] = useState(false)
 const [showEditWindow, setShowEditWindow] = useState(false)
 const [showNameWindow, setShowNameWindow] = useState(false)
-const [peach, setPeach] = useState(false)
+const [peach, setPeach] = useState(true)
 const [yellow, setYellow] = useState(false)
 const [blue, setBlue] = useState(false)
 const [green, setGreen] = useState(false)
+const [completed, setCompleted] = useState(false)
+const [uncompleted, setUncompleted] = useState(true)
+
 
 
 const menuClick = () => {
@@ -107,6 +112,22 @@ const decideClassName = () => {
   }
 } 
 
+const setCompletedFunc = () => {
+    setCompleted(true)
+    setUncompleted(false)
+    setShowMenu(false)
+    setTodoCompleted(id)
+}
+
+const setUncompletedFunc = () => {
+  setUncompleted(true)
+  setCompleted(false)
+  setShowMenu(false)
+  setTodoUncompleted(id)
+  
+  
+}
+
 
 
 
@@ -125,18 +146,18 @@ const decideClassName = () => {
             
         </div>
         {showMenu === true && <section className='menu'>
-          <div className='color-div'><section className='box' onClick={() => choosePeach()}>{peach && <BsCheckLg className='check'/>}</section><p className='color'>Peach</p></div>
-          <div className='color-div'><section className='box' onClick={() => chooseGreen()}>{green && <BsCheckLg className='check'/>}</section><p className='color'>Green</p></div>
-          <div className='color-div'><section className='box' onClick={() => chooseYellow()}>{yellow && <BsCheckLg className='check'/>}</section><p className='color'>Yellow</p></div>
-          <div className='color-div'><section className='box'  onClick={() => chooseBlue()}>{blue && <BsCheckLg className='check'/>}</section><p className='color'>Blue</p></div>
+          <div className='color-div'><section className='box' onClick={() => choosePeach()}>{color === "peach" && <BsCheckLg className='check'/>}</section><p className='color'>Peach</p></div>
+          <div className='color-div'><section className='box' onClick={() => chooseGreen()}>{color === "green" && <BsCheckLg className='check'/>}</section><p className='color'>Green</p></div>
+          <div className='color-div'><section className='box' onClick={() => chooseYellow()}>{color === "yellow" && <BsCheckLg className='check'/>}</section><p className='color'>Yellow</p></div>
+          <div className='color-div'><section className='box'  onClick={() => chooseBlue()}>{color === "blue" && <BsCheckLg className='check'/>}</section><p className='color'>Blue</p></div>
           <div className='divider'></div>
           <section className='done-section'>
-              <div className='completed-div'><section className='box'></section><p className='completed-text'>Completed</p></div>
-              <div className='uncompleted-div'><section className='box'></section><p className='uncompleted-text'>Uncompleted</p></div>
+              <div className='completed-div'><section className='box' onClick={() => setCompletedFunc()}>{done === "true" &&  <BsCheckLg className='check'/>}</section><p className='completed-text'>Completed</p></div>
+              <div className='uncompleted-div'><section className='box' onClick={() => setUncompletedFunc()}>{done === "false" &&  <BsCheckLg className='check'/>}</section><p className='uncompleted-text'>Uncompleted</p></div>
           </section>
         </section>}
         
-        <h2 className='task-text' onClick={() =>openWindow()}>{task}</h2>
+        <h2 className={done === "true" ? 'task-text linethrough' : 'task-text'} onClick={() =>openWindow()}>{task}</h2>
         <h3 className='name-text' onClick={() =>openEditName()}>{name}</h3>
 
         {showEditWindow === true && <EditWindow task={task} id={id} updateTask={updateTask} openWindow={openWindow}/>}
