@@ -2,7 +2,7 @@ import './card.css'
 import { IoClose } from 'react-icons/io5';
 import {useState} from 'react'
 import { BsCheckLg } from "react-icons/bs";
-import EditWindow from '../editWindow/EditWindow';
+import EditWindow from '../editTask/EditTask';
 
 
 
@@ -25,6 +25,7 @@ const Card:React.FC<Props> = ({task, name, done, id, deleteTodo, updateTask, col
 
 const [showMenu, setShowMenu] = useState(false)
 const [showEditWindow, setShowEditWindow] = useState(false)
+const [showNameWindow, setShowNameWindow] = useState(false)
 const [peach, setPeach] = useState(false)
 const [yellow, setYellow] = useState(false)
 const [blue, setBlue] = useState(false)

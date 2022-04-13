@@ -1,4 +1,4 @@
-import './editWindow.css'
+import './editTask.css'
 import {useState} from 'react'
 import TodoApiService from '../../api/services/TodoApiService'
 
@@ -9,8 +9,6 @@ interface Props {
     openWindow: () => void
 
 }
-
-
 
 
 const EditWindow: React.FC<Props> = ({task, id, updateTask, openWindow}) => {
