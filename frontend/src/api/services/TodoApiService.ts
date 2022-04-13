@@ -51,6 +51,14 @@ const TodoApiService = {
 
     getAllGreen: () => {
         return http.get('/green')
+    },
+
+    getAllYellow: () => {
+        return http.get('/yellow')
+    },
+   
+    getAllBlue: () => {
+        return http.get('/blue')
     }
 
 

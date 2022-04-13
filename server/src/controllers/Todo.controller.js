@@ -76,6 +76,26 @@ const getAllGreen = async (req, res) => {
         res.status(500).send({message: error.message})
     }
 }
+const getAllYellow = async (req, res) => {
+    try {
+        const response = await TodoModel.find({color: 'yellow'})
+        res.status(200).send(response)
+    }
+
+    catch(error) {
+        res.status(500).send({message: error.message})
+    }
+}
+const getAllBlue = async (req, res) => {
+    try {
+        const response = await TodoModel.find({color: 'blue'})
+        res.status(200).send(response)
+    }
+
+    catch(error) {
+        res.status(500).send({message: error.message})
+    }
+}
 
 
 const updateTask = async (req,res) => {
@@ -163,7 +183,9 @@ export default {
     updateColor,
     updateName,
     getAllPeach,
-    getAllGreen
+    getAllGreen,
+    getAllYellow,
+    getAllBlue
     
 
 

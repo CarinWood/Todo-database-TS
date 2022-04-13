@@ -10,10 +10,12 @@ interface Props {
   getAllUnompleted: () => void
   getPeach: () => void
   getGreen: () => void
+  getBlue: () => void
+  getYellow: () => void
   
 }
 
-const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnompleted, getPeach, getGreen}) => {
+const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnompleted, getPeach, getGreen, getBlue, getYellow}) => {
 
     const [taskValue, setTaskValue] = useState('')
     const [nameValue, setNameValue] = useState('')
@@ -59,12 +61,10 @@ const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnomple
             getGreen()
 
           } else if (selectValue === '3') {
-            const color = 'yellow'
-            console.log(color)
+            getYellow()
 
           } else if (selectValue === '4') {
-            const color = 'blue'
-            console.log(color)
+            getBlue()
           }
 
 

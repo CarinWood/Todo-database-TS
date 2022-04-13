@@ -155,12 +155,28 @@ const chooseColor = (id: string, choosenColor: string) => {
      })
      .catch(error => console.log(error))
    }
+
+   const getYellow = () => {
+     TodoApiService.getAllYellow()
+     .then(response => {
+      setTodos(response.data)
+    })
+    .catch(error => console.log(error))
+   }
+
+   const getBlue = () => {
+     TodoApiService.getAllBlue()
+     .then(response => {
+      setTodos(response.data)
+    })
+    .catch(error => console.log(error))
+   }
   
     
 
     return (
         <div className='todo-list'>
-            <InputArea addNewTodo={addNewTodo} getAllCompleted={getAllCompleted} getAll={getAll} getAllUnompleted={getAllUnompleted} getPeach={getPeach} getGreen={getGreen}/>
+            <InputArea addNewTodo={addNewTodo} getAllCompleted={getAllCompleted} getAll={getAll} getAllUnompleted={getAllUnompleted} getPeach={getPeach} getGreen={getGreen} getYellow={getYellow} getBlue={getBlue}/>
 
             <div className="cards">
                     {todos.length > 0

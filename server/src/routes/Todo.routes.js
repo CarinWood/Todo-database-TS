@@ -13,6 +13,8 @@ const routes = (app) => {
     app.delete('/todo/:todoId', TodoController.deleteTodo)
     app.get('/peach', TodoController.getAllPeach)
     app.get('/green', TodoController.getAllGreen)
+    app.get('/yellow', TodoController.getAllYellow)
+    app.get('/blue', TodoController.getAllBlue)
    
 
 }
