@@ -11,6 +11,8 @@ const routes = (app) => {
     app.put('/name/:todoId', TodoController.updateName)
     app.put('/color/:todoId', TodoController.updateColor)
     app.delete('/todo/:todoId', TodoController.deleteTodo)
+    app.get('/peach', TodoController.getAllPeach)
+    app.get('/green', TodoController.getAllGreen)
    
 
 }

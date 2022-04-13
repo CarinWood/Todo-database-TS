@@ -8,10 +8,12 @@ interface Props {
   getAllCompleted: () => void; 
   getAll: () => void
   getAllUnompleted: () => void
+  getPeach: () => void
+  getGreen: () => void
   
 }
 
-const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnompleted}) => {
+const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnompleted, getPeach, getGreen}) => {
 
     const [taskValue, setTaskValue] = useState('')
     const [nameValue, setNameValue] = useState('')
@@ -49,6 +51,25 @@ const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnomple
 
     }
 
+    const selectHandler = (selectValue: string) => {
+          if (selectValue === '1') {
+            getPeach()
+
+          } else if (selectValue === '2') {
+            getGreen()
+
+          } else if (selectValue === '3') {
+            const color = 'yellow'
+            console.log(color)
+
+          } else if (selectValue === '4') {
+            const color = 'blue'
+            console.log(color)
+          }
+
+
+    }
+
   
    
 
@@ -79,12 +100,26 @@ const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnomple
 
             <p className="search">Search</p>
 
+            <section className='color-search-area'>
+                <p className='search-color-headline'>Search by color:</p>
+
+                <select className='select-input' onChange={(e) =>{ selectHandler(e.target.value)}}>
+                  <option value={0}>Select color:</option>
+                  <option value={1}>Peach</option>
+                  <option value={2}>Green</option>
+                  <option value={3}>Yellow</option>
+                  <option value={4}>Blue</option>
+                </select>
+            </section>
+           
+
             <section className='box-area'>
             <div className='all-div'><section className='checkbox' onClick={() => searchForAll()}>{all && <BsCheckLg className="checkmark"/>}</section><p className='all-choice'>All</p></div>
             <div className='completed-div'><section className='checkbox'onClick={() => searchForCompleted()}>{completed && <BsCheckLg className="checkmark"/>}</section><p className='completed-choice'>Completed</p></div>
             <div className='uncompleted-div'><section className='checkbox' onClick={() => searchForUncompleted()}>{uncompleted && <BsCheckLg className="checkmark"/>}</section><p className='uncompleted-choice'>Uncompleted</p></div>
             </section>
-           
+
+          
 
               
             

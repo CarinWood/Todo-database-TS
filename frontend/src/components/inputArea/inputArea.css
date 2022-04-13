@@ -1,6 +1,7 @@
 .input-container {
     width: 400px;
     margin: 0px;
+    height: 95vh;
     background-color: var(--side-color);
     position: absolute;
     top: 0;
@@ -27,7 +28,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 30px;
     position: relative;
 }
 
@@ -75,7 +76,8 @@
     font-size: 33px;
     font-weight: 900;
     opacity: 0.8;
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .search-btn {
@@ -122,6 +124,7 @@
     justify-content: flex-start;
     padding-left: 50px;
     width: 330px;
+    margin-top: 30px;
 }
 
 .checkbox {
@@ -148,5 +151,30 @@
     position: absolute;
     margin-bottom: 7px;
 }
+
+.color-search-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-color-headline {
+    color: white;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.select-input {
+    position: relative;
+    font-family: "Roboto";
+    letter-spacing: 1px;
+    font-size: 15px;
+    color: black;
+    width: 126px;
+}
+
+
+
 
 

@@ -43,7 +43,17 @@ const TodoApiService = {
 
     getAll: () => {
         return http.get('/todo')
+    },
+
+    getAllPeach: () => {
+        return http.get('/peach')
+    },
+
+    getAllGreen: () => {
+        return http.get('/green')
     }
+
+
 
 
 }

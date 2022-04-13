@@ -43,9 +43,32 @@ const getCompletedTodos = async (req, res) => {
         res.status(500).send({message: error.message})
     }
 }
+
 const getUncompletedTodos = async (req, res) => {
     try {
         const response = await TodoModel.find({done: 'false'})
+        res.status(200).send(response)
+    }
+
+    catch(error) {
+        res.status(500).send({message: error.message})
+    }
+}
+
+const getAllPeach = async (req, res) => {
+    try {
+        const response = await TodoModel.find({color: 'peach'})
+        res.status(200).send(response)
+    }
+
+    catch(error) {
+        res.status(500).send({message: error.message})
+    }
+}
+
+const getAllGreen = async (req, res) => {
+    try {
+        const response = await TodoModel.find({color: 'green'})
         res.status(200).send(response)
     }
 
@@ -138,7 +161,9 @@ export default {
     updateDone,
     deleteTodo,
     updateColor,
-    updateName
+    updateName,
+    getAllPeach,
+    getAllGreen
     
 
 
