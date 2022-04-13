@@ -69,6 +69,20 @@ const updateTask = async (req,res) => {
         res.status(500).send({message: error.message})
     }
 }
+const updateName = async (req,res) => {
+    try {
+        await TodoModel.findByIdAndUpdate(req.params.todoId, {
+            name: req.body.name
+        }, {new: true})
+       
+        const response = await TodoModel.find()
+        res.status(200).send(response)
+    } 
+    
+    catch(error) {
+        res.status(500).send({message: error.message})
+    }
+}
 
 const updateDone = async (req, res) => {
     try {
@@ -124,6 +138,7 @@ export default {
     updateDone,
     deleteTodo,
     updateColor,
+    updateName
     
 
 

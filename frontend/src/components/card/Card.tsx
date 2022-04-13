@@ -3,6 +3,7 @@ import { IoClose } from 'react-icons/io5';
 import {useState} from 'react'
 import { BsCheckLg } from "react-icons/bs";
 import EditWindow from '../editTask/EditTask';
+import EditName from '../editName/EditName'
 
 
 
@@ -16,12 +17,13 @@ interface Props {
       deleteTodo: (id: string) => void
       updateTask: (id: string, newTask: string) => void
       chooseColor: (id: string, choosenColor: string) => void
+      updateName: (id: string, newName: string) => void
      
 }
 
 
 
-const Card:React.FC<Props> = ({task, name, done, id, deleteTodo, updateTask, color, chooseColor}) => {
+const Card:React.FC<Props> = ({task, name, done, id, deleteTodo, updateTask, color, chooseColor, updateName}) => {
 
 const [showMenu, setShowMenu] = useState(false)
 const [showEditWindow, setShowEditWindow] = useState(false)
@@ -40,6 +42,14 @@ const menuClick = () => {
 const openWindow = () => {
   setShowEditWindow(!showEditWindow)
 } 
+
+const openNameWindow = () => {
+  setShowNameWindow(!showNameWindow)
+}
+
+const openEditName = () => {
+  setShowNameWindow(true)
+}
 
 
 
@@ -119,12 +129,18 @@ const decideClassName = () => {
           <div className='color-div'><section className='box' onClick={() => chooseGreen()}>{green && <BsCheckLg className='check'/>}</section><p className='color'>Green</p></div>
           <div className='color-div'><section className='box' onClick={() => chooseYellow()}>{yellow && <BsCheckLg className='check'/>}</section><p className='color'>Yellow</p></div>
           <div className='color-div'><section className='box'  onClick={() => chooseBlue()}>{blue && <BsCheckLg className='check'/>}</section><p className='color'>Blue</p></div>
+          <div className='divider'></div>
+          <section className='done-section'>
+              <div className='completed-div'><section className='box'></section><p className='completed-text'>Completed</p></div>
+              <div className='uncompleted-div'><section className='box'></section><p className='uncompleted-text'>Uncompleted</p></div>
+          </section>
         </section>}
         
         <h2 className='task-text' onClick={() =>openWindow()}>{task}</h2>
-        <h3 className='name-text'>{name}</h3>
+        <h3 className='name-text' onClick={() =>openEditName()}>{name}</h3>
 
         {showEditWindow === true && <EditWindow task={task} id={id} updateTask={updateTask} openWindow={openWindow}/>}
+        {showNameWindow === true && <EditName name={name} id={id} updateName={updateName} openNameWindow={openNameWindow}/>}
     </div>
   )
 }

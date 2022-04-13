@@ -34,6 +34,12 @@
 
 .name-text {
     color: var(--side-color);
+    cursor: pointer;
+    width: 260px;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: 900;
 }
 
 .close-area {
@@ -79,7 +85,7 @@
     padding-left: 10px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -145,6 +151,33 @@
     width: 100%;
     height: 5vh;
     opacity: 0.5;
+}
+
+.divider {
+    height: 0.5px;
+    width: 200px;
+    background-color: var(--text-color);
+    margin-top: 5px;
+    margin-bottom: 5px;
+   
+}
+
+.completed-div, .uncompleted-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 160px;
+    margin-right: 5px;
+}
+
+.done-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 280px;
+    letter-spacing: 1.6px;
+
 }
 
 

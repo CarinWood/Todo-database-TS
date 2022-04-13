@@ -17,6 +17,10 @@ const TodoApiService = {
         return http.put(`/todo/${id}`, newTask)
     },
 
+    updateName: (id: string, newName: object) => {
+        return http.put(`/name/${id}`, newName)
+    },
+
     updateColor: (id: string, color: object) => {
         return http.put(`/color/${id}`, color)
     },

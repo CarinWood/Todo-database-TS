@@ -8,6 +8,7 @@ const routes = (app) => {
     app.get('/uncompleted', TodoController.getUncompletedTodos)
     app.get('/completed', TodoController.getCompletedTodos)
     app.put('/todo/:todoId', TodoController.updateTask)
+    app.put('/name/:todoId', TodoController.updateName)
     app.put('/color/:todoId', TodoController.updateColor)
     app.delete('/todo/:todoId', TodoController.deleteTodo)
    
