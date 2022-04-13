@@ -4,7 +4,7 @@ import InputArea from '../inputArea/InputArea';
 import TodoApiService from '../../api/services/TodoApiService';
 import Placeholder from '../placeholder/Placeholder';
 import Card from '../card/Card';
-import { BsListTask } from 'react-icons/bs';
+
 
 
 const TodoList = () => {
@@ -16,6 +16,9 @@ const TodoList = () => {
         name: string
         done: string
         _id: string
+        color: string
+       
+
     }
 
 
@@ -32,7 +35,8 @@ const TodoList = () => {
             const newTodo = {
                 task: value1,
                 name: value2,
-                done: "false"
+                done: "false",
+                color: "peach"
             }
 
             TodoApiService.addNewTodo(newTodo)
@@ -56,18 +60,31 @@ const TodoList = () => {
     .catch(error => console.log(error))
 }
 
+const chooseColor = (id: string, choosenColor: string) => {
+    const color = {
+      "color": choosenColor
+    }
+  
+    TodoApiService.updateColor(id, color)
+    .then(response => {
+      setTodos(response.data)
+    })
+    .catch(error => console.log(error))
+  }
+
+   
   
     
 
     return (
         <div className='todo-list'>
-            <InputArea addNewTodo={addNewTodo} />
+            <InputArea addNewTodo={addNewTodo}/>
 
            
 
             <div className="cards">
                     {todos.length > 0
-                    ? todos.map((todo:Todo) => <Card id={todo._id} task={todo.task} name={todo.name} done={todo.done} deleteTodo={deleteTodo} updateTask={updateTask}/>)
+                    ? todos.map((todo:Todo) => <Card id={todo._id} task={todo.task} name={todo.name} done={todo.done} color={todo.color} deleteTodo={deleteTodo} updateTask={updateTask} chooseColor={chooseColor}/>)
                     : <Placeholder/> }
 
                     

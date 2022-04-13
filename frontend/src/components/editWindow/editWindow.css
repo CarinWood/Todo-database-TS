@@ -5,17 +5,29 @@
     padding: 5px;
     border-radius: 5px;
     position: absolute;
-    top: 24%;
+    top: 24.7%;
+    border: 1px solid var(--background);
+    background-color: var(--background);
+    width: 260px;
+    color: var(--side-color);
+    font-size: 23px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 400;
+    outline: none;
 }
+
+
 
 .done-btn {
     margin-top: 20px;
-    background-color: transparent;
-    border: 2px solid var(--side-color);
+    background-color: #da724f;
+    opacity: 0.5;
+    border: 2px solid var(--text-color);
     padding: 5px;
     font-size: 20px;
     letter-spacing: 2px;
-    color: var(--side-color);
+    color: var(--text-color);
     width: 120px;
     border-radius: 5px;
     cursor: pointer;

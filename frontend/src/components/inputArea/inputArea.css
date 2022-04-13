@@ -75,6 +75,32 @@
     font-size: 33px;
     font-weight: 900;
     opacity: 0.8;
+    margin-top: 50px;
+}
+
+.search-btn {
+    color: var(--text-color);
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    letter-spacing: 2px;
+    width: 130px; 
+}
+
+.search-btn:active {
+    transform: translateY(2px);
+}
+
+.magnifyer {
+    margin-left: 10px;
 }
 
 

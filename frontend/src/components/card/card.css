@@ -25,6 +25,11 @@
     color: var(--side-color);
     cursor: pointer;
     margin-top: 32px;
+    font-size: 23px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    width: 260px;
+    text-align: center;
 }
 
 .name-text {
@@ -40,10 +45,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.close-area:hover, .dot-area:hover {
-    background-color: #d34f23;
 }
 
 .close {
@@ -119,3 +120,31 @@
     margin-bottom: 7px;
   
 }
+
+.green {
+    background-color: rgb(79, 167, 117);
+    width: 100%;
+    height: 5vh;
+    opacity: 0.5;
+}
+.blue {
+    background-color: rgb(98, 98, 211);
+    width: 100%;
+    height: 5vh;
+    opacity: 0.5;
+}
+.peach {
+    background-color: #da724f;
+    width: 100%;
+    height: 5vh;
+    opacity: 0.5;
+}
+
+.yellow {
+    background-color: rgb(245, 225, 69);
+    width: 100%;
+    height: 5vh;
+    opacity: 0.5;
+}
+
+
