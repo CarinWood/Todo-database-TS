@@ -21,9 +21,9 @@
 
 .done-btn {
     margin-top: 20px;
-    background-color: #da724f;
+    background-color: #db6139;
     opacity: 0.5;
-    border: 2px solid var(--text-color);
+    border: none;
     padding: 5px;
     font-size: 20px;
     letter-spacing: 2px;
@@ -31,6 +31,7 @@
     width: 120px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .done-btn:active {

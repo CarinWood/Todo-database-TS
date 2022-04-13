@@ -2,8 +2,8 @@ import './card.css'
 import { IoClose } from 'react-icons/io5';
 import {useState} from 'react'
 import { BsCheckLg } from "react-icons/bs";
-import EditWindow from '../editTask/EditTask';
-import EditName from '../editName/EditName'
+import EditTask from '../editTask/EditTask';
+
 
 
 
@@ -17,7 +17,6 @@ interface Props {
       deleteTodo: (id: string) => void
       updateTask: (id: string, newTask: string) => void
       chooseColor: (id: string, choosenColor: string) => void
-      updateName: (id: string, newName: string) => void
       setTodoCompleted: (id: string) => void
       setTodoUncompleted: (id: string) => void
      
@@ -25,11 +24,10 @@ interface Props {
 
 
 
-const Card:React.FC<Props> = ({task, name, done, id, deleteTodo, updateTask, color, chooseColor, updateName, setTodoCompleted, setTodoUncompleted}) => {
+const Card:React.FC<Props> = ({task, name, done, id, deleteTodo, updateTask, color, chooseColor, setTodoCompleted, setTodoUncompleted}) => {
 
 const [showMenu, setShowMenu] = useState(false)
 const [showEditWindow, setShowEditWindow] = useState(false)
-const [showNameWindow, setShowNameWindow] = useState(false)
 const [peach, setPeach] = useState(true)
 const [yellow, setYellow] = useState(false)
 const [blue, setBlue] = useState(false)
@@ -46,16 +44,7 @@ const menuClick = () => {
 
 const openWindow = () => {
   setShowEditWindow(!showEditWindow)
-} 
-
-const openNameWindow = () => {
-  setShowNameWindow(!showNameWindow)
-}
-
-const openEditName = () => {
-  setShowNameWindow(true)
-}
-
+}   
 
 
 const chooseYellow = () => {
@@ -156,10 +145,10 @@ const setUncompletedFunc = () => {
         </section>}
         
         <h2 className={done === "true" ? 'task-text linethrough' : 'task-text'} onClick={() =>openWindow()}>{task}</h2>
-        <h3 className='name-text' onClick={() =>openEditName()}>{name}</h3>
+        <h3 className='name-text'>{name}</h3>
 
-        {showEditWindow === true && <EditWindow task={task} id={id} updateTask={updateTask} openWindow={openWindow}/>}
-        {showNameWindow === true && <EditName name={name} id={id} updateName={updateName} openNameWindow={openNameWindow}/>}
+        {showEditWindow === true && <EditTask task={task} id={id} updateTask={updateTask} openWindow={openWindow}/>}
+      
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import './todoList.css'
 import InputArea from '../inputArea/InputArea';
 import TodoApiService from '../../api/services/TodoApiService';
@@ -60,17 +60,6 @@ const TodoList = () => {
     .catch(error => console.log(error))
 }
 
-const updateName = (_id: string, _newName: string) => {
-  const newName = {
-    "name": _newName
-  }
-
-    TodoApiService.updateName(_id, newName)
-    .then(response => {
-      setTodos(response.data)
-    })
-    .catch(error => console.log(error))
-}
 
 const chooseColor = (id: string, choosenColor: string) => {
     const color = {
@@ -180,7 +169,7 @@ const chooseColor = (id: string, choosenColor: string) => {
 
             <div className="cards">
                     {todos.length > 0
-                    ? todos.map((todo:Todo) => <Card id={todo._id} task={todo.task} name={todo.name} done={todo.done} color={todo.color} deleteTodo={deleteTodo} updateTask={updateTask} updateName={updateName} chooseColor={chooseColor} setTodoCompleted={setTodoCompleted} setTodoUncompleted={setTodoUncompleted}/>)
+                    ? todos.map((todo:Todo) => <Card id={todo._id} task={todo.task} name={todo.name} done={todo.done} color={todo.color} deleteTodo={deleteTodo} updateTask={updateTask} chooseColor={chooseColor} setTodoCompleted={setTodoCompleted} setTodoUncompleted={setTodoUncompleted}/>)
                     : <Placeholder/> }
 
                     
