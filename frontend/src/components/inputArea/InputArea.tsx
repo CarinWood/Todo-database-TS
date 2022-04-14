@@ -109,10 +109,13 @@ const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnomple
                     onChange={(event) => setNameValue(event.target.value)}
                 />
                     
-
+                    <div className='color-decide-div'>
+              jlkjlkjlk
+            </div>
 
                 <button className="add-btn" onClick={()=> handleClick()}>Add</button>
             </div>
+         
 
             <p className="search">Search</p>
 

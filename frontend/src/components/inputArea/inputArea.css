@@ -191,6 +191,11 @@
     background-color: var(--background);
 }
 
+.color-decide-div {
+    margin-top: 10px;
+    border: 1px solid white;
+}
+
 
 
 
