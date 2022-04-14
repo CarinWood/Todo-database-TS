@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react'
 import './inputArea.css'
-import { BsPencilFill, BsSearch, BsCheckLg } from 'react-icons/bs';
+import { BsPencilFill, BsCheckLg } from 'react-icons/bs';
 
 
 interface Props {
@@ -77,6 +77,10 @@ const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnomple
             setAll(false)
             setCompleted(false)
             setUncompleted(false)
+
+          } else {
+            getAll()
+
           }
 
 
@@ -113,7 +117,7 @@ const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnomple
             <p className="search">Search</p>
 
             <section className='color-search-area'>
-                <p className='search-color-headline'>Search by color:</p>
+                <p className='search-color-headline'>Search by color :</p>
 
                 <select className='select-input' onChange={(e) =>{ selectHandler(e.target.value)}}>
                   <option value={0}>Select color:</option>

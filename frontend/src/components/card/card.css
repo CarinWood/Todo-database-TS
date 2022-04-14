@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: var(--background);
+    background-color:var(--background) ;
     margin-right: 20px;
     border-radius: 4px;
     position: relative;
@@ -83,7 +83,7 @@
     top: 15%;
     left: 0;
     width: 280px;
-    background-color: var(--side-color);
+    background-color: var(--background);
     padding-left: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -97,7 +97,7 @@
 .box {
     width: 18px;
     height: 18px;
-    border: 1px solid white;
+    border: 1px solid var(--side-color);
     margin-right: 8px;
     border-radius: 3px;
     cursor: pointer;
@@ -119,9 +119,10 @@
 .color {
     margin-right: 8px;
     letter-spacing: 1.6px;
+    font-weight: 800;
     padding: 3px 6px;
     border-radius: 3px;
-    color: white;
+    color: var(--side-color);
 }
 
 .check {
@@ -129,7 +130,7 @@
     font-weight: 200;
     position: absolute;
     margin-bottom: 7px;
-    color: white;
+    color: var(--side-color);
   
 }
 
@@ -162,7 +163,7 @@
 .divider {
     height: 0.5px;
     width: 200px;
-    background-color: var(--text-color);
+    background-color: var(--side-color);
     margin-top: 5px;
     margin-bottom: 5px;
    
@@ -174,7 +175,7 @@
     align-items: center;
     width: 160px;
     margin-right: 5px;
-    color: white;
+    color: var(--side-color);
 }
 
 .done-section {
