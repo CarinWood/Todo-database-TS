@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 .card {
     width: 290px;
     height: 260px;
@@ -24,8 +26,8 @@
     cursor: pointer;
     margin-top: 32px;
     font-size: 23px;
-    letter-spacing: 1px;
-    font-weight: 400;
+    letter-spacing: 1.5px;
+    font-weight: 600;
     width: 260px;
     text-align: center;
 }
@@ -38,10 +40,11 @@
 .name-text {
     color: black;
     width: 260px;
-    font-size: 22px;
-    letter-spacing: 1px;
+    font-size: 28px;
+    letter-spacing: 3px;
     text-align: center;
-    font-weight: 900;
+    font-weight: 700;
+    font-family: "Lobster"
 }
 
 .close-area {

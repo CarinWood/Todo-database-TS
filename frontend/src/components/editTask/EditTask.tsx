@@ -24,7 +24,7 @@ const EditWindow: React.FC<Props> = ({task, id, updateTask, openWindow}) => {
     <>
         <input 
             type="text"
-            maxLength={22}
+            maxLength={18}
             className='edit-input'
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
