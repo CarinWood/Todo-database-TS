@@ -1,11 +1,11 @@
 .todo-list {
-    height: 100vh;
+    height: 200vh;
     position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-image: url('../../assets/images/beach.jpg');
+    background-color: teal;
     background-size: cover;
     background-position: center;
 }
