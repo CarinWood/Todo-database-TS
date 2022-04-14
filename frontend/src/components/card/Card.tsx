@@ -54,7 +54,6 @@ const chooseYellow = () => {
   setBlue(false)
   const choosenColor = 'yellow'
   chooseColor(id, choosenColor)
-  setShowMenu(false)
 }
 
 const choosePeach = () => {
@@ -62,9 +61,8 @@ const choosePeach = () => {
   setYellow(false)
   setGreen(false)
   setBlue(false)
-  const choosenColor = 'pink'
+  const choosenColor = 'peach'
   chooseColor(id, choosenColor)
-  setShowMenu(false)
 }
 
 const chooseBlue = () => {
@@ -74,7 +72,7 @@ const chooseBlue = () => {
   setGreen(false)
   const choosenColor = 'blue'
   chooseColor(id, choosenColor)
-  setShowMenu(false)
+
 }
 
 const chooseGreen = () => {
@@ -84,7 +82,7 @@ const chooseGreen = () => {
   setBlue(false)
   const choosenColor = 'green'
   chooseColor(id, choosenColor)
-  setShowMenu(false)
+ 
 }
 
 const decideClassName = () => {
@@ -133,10 +131,10 @@ const setUncompletedFunc = () => {
             
         </div>
         {showMenu === true && <section className='menu'>
-          <div className='color-div'><section className='box' onClick={() => choosePeach()}>{color === "peach" && <BsCheckLg className='check'/>}</section><p className='color'>Peach</p></div>
-          <div className='color-div'><section className='box' onClick={() => chooseGreen()}>{color === "green" && <BsCheckLg className='check'/>}</section><p className='color'>Green</p></div>
-          <div className='color-div'><section className='box' onClick={() => chooseYellow()}>{color === "yellow" && <BsCheckLg className='check'/>}</section><p className='color'>Yellow</p></div>
-          <div className='color-div'><section className='box'  onClick={() => chooseBlue()}>{color === "blue" && <BsCheckLg className='check'/>}</section><p className='color'>Blue</p></div>
+          <div className='color-div'><section className='box' onClick={() => choosePeach()}>{color === "peach" && <BsCheckLg className='check'/>}</section><p className='peach-color'></p></div>
+          <div className='color-div'><section className='box' onClick={() => chooseGreen()}>{color === "green" && <BsCheckLg className='check'/>}</section><p className='green-color'></p></div>
+          <div className='color-div'><section className='box' onClick={() => chooseYellow()}>{color === "yellow" && <BsCheckLg className='check'/>}</section><p className='yellow-color'></p></div>
+          <div className='color-div'><section className='box'  onClick={() => chooseBlue()}>{color === "blue" && <BsCheckLg className='check'/>}</section><p className='blue-color'></p></div>
           <div className='divider'></div>
           <section className='done-section'>
               <div className='completed-div'><section className='box' onClick={() => setCompletedFunc()}>{done === "true" &&  <BsCheckLg className='check'/>}</section><p className='completed-text'>Completed</p></div>
