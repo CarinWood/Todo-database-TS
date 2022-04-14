@@ -83,7 +83,7 @@
     top: 15%;
     left: 0;
     width: 280px;
-    background-color: var(--background);
+    background-color: rgb(56, 57, 60);
     padding-left: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -97,8 +97,8 @@
 .box {
     width: 18px;
     height: 18px;
-    border: 1px solid black;
-    margin-right: 8px;
+    border: 1px solid var(--background);
+    margin-right: 12px;
     border-radius: 3px;
     cursor: pointer;
     position: relative;
@@ -112,16 +112,26 @@
     justify-content: flex-start;
     align-items: center;
     width: 130px;
-    margin-right: 5px;
-  
+    margin-right: 5px; 
 }
 
-.peach-color {
+.pink-color {
     margin-right: 8px;
     width: 45px;
     height: 20px;
-    background-color: #da724f;
-    opacity: 0.6;
+    background-color: var(--background);
+    border-radius: 3px;
+    position: relative;
+}
+
+.pink-color-div {
+    width: 45px;
+    height: 20px;
+    background-color: #da4fb5;
+    position: absolute;
+    top: -80%;
+    left: 0;
+    opacity: 0.5;
     border-radius: 3px;
 }
 
@@ -129,7 +139,18 @@
     margin-right: 8px;
     width: 45px;
     height: 20px;
-    background-color: rgb(79, 167, 117);
+    background-color: var(--background);
+    border-radius: 3px;
+    position: relative;
+}
+
+.green-color-div {
+    width: 45px;
+    height: 20px;
+    background-color:  rgb(7, 192, 59);
+    position: absolute;
+    top: -80%;
+    left: 0;
     opacity: 0.6;
     border-radius: 3px;
 }
@@ -138,7 +159,18 @@
     margin-right: 8px;
     width: 45px;
     height: 20px;
-    background-color: rgb(245, 225, 69);
+    background-color: var(--background);
+    border-radius: 3px;
+    position: relative;
+}
+
+.yellow-color-div {
+    width: 45px;
+    height: 20px;
+    background-color:  #F2DA54;
+    position: absolute;
+    top: -80%;
+    left: 0;
     opacity: 0.6;
     border-radius: 3px;
 }
@@ -147,50 +179,63 @@
     margin-right: 8px;
     width: 45px;
     height: 20px;
-    background-color: rgb(98, 98, 211);
+    background-color: var(--background);
+    border-radius: 3px;
+    position: relative;
+}
+
+.blue-color-div {
+    width: 45px;
+    height: 20px;
+    background-color: rgb(42, 80, 245);
+    position: absolute;
+    top: -80%;
+    left: 0;
     opacity: 0.6;
     border-radius: 3px;
 }
 
 .check {
-    font-size: 24px;
+    font-size: 29px;
     font-weight:lighter;
     position: absolute;
     margin-bottom: 7px;
-    color: black;
+    margin-left: 5px;
+    color: var(--background);
+    z-index: 8;
   
 }
 
 .green {
-    background-color: rgb(79, 167, 117);
+    background-color: rgb(7, 192, 59);
     width: 100%;
     height: 5vh;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 .blue {
-    background-color: rgb(98, 98, 211);
+    background-color: rgb(42, 80, 245);
     width: 100%;
     height: 5vh;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 .peach {
-    background-color: #da724f;
+    background-color: #da4fb5;
     width: 100%;
     height: 5vh;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .yellow {
-    background-color: rgb(245, 225, 69);
+    background-color: #F2DA54;
     width: 100%;
     height: 5vh;
-    opacity: 0.5;
+    opacity: 0.9;
 }
 
 .divider {
     height: 0.5px;
     width: 200px;
-    background-color: black;
+    background-color: white;
     margin-top: 5px;
     margin-bottom: 5px;
    
@@ -202,7 +247,7 @@
     align-items: center;
     width: 160px;
     margin-right: 5px;
-    color: black;
+    color: white;
 }
 
 .done-section {
@@ -212,6 +257,8 @@
     align-items: flex-start;
     width: 280px;
     letter-spacing: 1.6px;
+    margin-bottom: 5px;
+    margin-left: 4px;
 }
 
 

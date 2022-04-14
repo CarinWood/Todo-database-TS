@@ -1,23 +1,25 @@
 .todo-list {
-    height: 200vh;
+    height: 96vh;
+    max-width: 97vw;
+    overflow-x: hidden;
     position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: teal;
+    background-color: black;
     background-size: cover;
     background-position: center;
 }
 
 .cards {
-    width: 68%;
+    width: 65%;
     display: flex;
     flex-wrap: wrap; 
     justify-content:flex-start;
     align-items: center; 
     position: absolute;
     top: 0;
-    right: 0;
-    
+    right: 3%;
+    margin-top: 50px;
 }

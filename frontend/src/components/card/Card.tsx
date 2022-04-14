@@ -2,6 +2,7 @@ import './card.css'
 import { IoClose } from 'react-icons/io5';
 import {useState} from 'react'
 import { BsCheckLg } from "react-icons/bs";
+import { MdDone } from "react-icons/md";
 import EditTask from '../editTask/EditTask';
 
 
@@ -131,14 +132,14 @@ const setUncompletedFunc = () => {
             
         </div>
         {showMenu === true && <section className='menu'>
-          <div className='color-div'><section className='box' onClick={() => choosePeach()}>{color === "peach" && <BsCheckLg className='check'/>}</section><p className='peach-color'></p></div>
-          <div className='color-div'><section className='box' onClick={() => chooseGreen()}>{color === "green" && <BsCheckLg className='check'/>}</section><p className='green-color'></p></div>
-          <div className='color-div'><section className='box' onClick={() => chooseYellow()}>{color === "yellow" && <BsCheckLg className='check'/>}</section><p className='yellow-color'></p></div>
-          <div className='color-div'><section className='box'  onClick={() => chooseBlue()}>{color === "blue" && <BsCheckLg className='check'/>}</section><p className='blue-color'></p></div>
+          <div className='color-div'><section className='box' onClick={() => choosePeach()}>{color === "peach" && <MdDone className='check'/>}</section><p className='pink-color'><p className='pink-color-div'></p></p></div>
+          <div className='color-div'><section className='box' onClick={() => chooseGreen()}>{color === "green" && <MdDone className='check'/>}</section><p className='green-color'><p className='green-color-div'></p></p></div>
+          <div className='color-div'><section className='box' onClick={() => chooseYellow()}>{color === "yellow" && <MdDone className='check'/>}</section><p className='yellow-color'><p className='yellow-color-div'></p></p></div>
+          <div className='color-div'><section className='box'  onClick={() => chooseBlue()}>{color === "blue" && <MdDone className='check'/>}</section><p className='blue-color'><p className='blue-color-div'></p></p></div>
           <div className='divider'></div>
           <section className='done-section'>
-              <div className='completed-div'><section className='box' onClick={() => setCompletedFunc()}>{done === "true" &&  <BsCheckLg className='check'/>}</section><p className='completed-text'>Completed</p></div>
-              <div className='uncompleted-div'><section className='box' onClick={() => setUncompletedFunc()}>{done === "false" &&  <BsCheckLg className='check'/>}</section><p className='uncompleted-text'>Uncompleted</p></div>
+              <div className='completed-div'><section className='box' onClick={() => setCompletedFunc()}>{done === "true" &&  <MdDone className='check'/>}</section><p className='completed-text'>Completed</p></div>
+              <div className='uncompleted-div'><section className='box' onClick={() => setUncompletedFunc()}>{done === "false" &&  <MdDone className='check'/>}</section><p className='uncompleted-text'>Uncompleted</p></div>
           </section>
         </section>}
         

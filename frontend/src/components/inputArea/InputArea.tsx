@@ -121,7 +121,7 @@ const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnomple
 
                 <select className='select-input' onChange={(e) =>{ selectHandler(e.target.value)}}>
                   <option value={0}>Select color:</option>
-                  <option value={1}>Peach</option>
+                  <option value={1}>Pink</option>
                   <option value={2}>Green</option>
                   <option value={3}>Yellow</option>
                   <option value={4}>Blue</option>
@@ -137,7 +137,7 @@ const InputArea:FC<Props> = ({addNewTodo, getAllCompleted, getAll, getAllUnomple
 
           
 
-              
+              <div className='div-line'></div>
             
     </div>
   )
