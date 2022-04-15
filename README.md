@@ -10,6 +10,10 @@
 
 ![image](/frontend/src/assets/images/todots4.JPG)
 
+## You can search for a specific Tood by color or clicking the checkboxes based on what you want to show
+
+![image](/frontend/src/assets/images/todots6.JPG)
+
 ## You can edit the text of your Todo by clicking on the text. A window will appear when you do so.
 
 ![image](/frontend/src/assets/images/todots3.JPG)
