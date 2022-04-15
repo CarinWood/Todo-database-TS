@@ -8,7 +8,7 @@
 
 ## When you mark the Todo as completed it gets a line through it.
 
-![image](/frontend/src/assets/images/todots4.JPG)
+<img src="./frontend/src/assets/images/todots4.JPG" width="300" />
 
 ## You can search for a specific Tood by color or clicking the checkboxes based on what you want to show
 
