@@ -1,7 +1,6 @@
 import './card.css'
 import { IoClose } from 'react-icons/io5';
 import {useState} from 'react'
-import { BsCheckLg } from "react-icons/bs";
 import { MdDone } from "react-icons/md";
 import EditTask from '../editTask/EditTask';
 
@@ -55,6 +54,7 @@ const chooseYellow = () => {
   setBlue(false)
   const choosenColor = 'yellow'
   chooseColor(id, choosenColor)
+  setShowMenu(false)
 }
 
 const choosePeach = () => {
@@ -64,6 +64,7 @@ const choosePeach = () => {
   setBlue(false)
   const choosenColor = 'peach'
   chooseColor(id, choosenColor)
+  setShowMenu(false)
 }
 
 const chooseBlue = () => {
@@ -73,7 +74,7 @@ const chooseBlue = () => {
   setGreen(false)
   const choosenColor = 'blue'
   chooseColor(id, choosenColor)
-
+  setShowMenu(false)
 }
 
 const chooseGreen = () => {
@@ -83,7 +84,7 @@ const chooseGreen = () => {
   setBlue(false)
   const choosenColor = 'green'
   chooseColor(id, choosenColor)
- 
+  setShowMenu(false)
 }
 
 const decideClassName = () => {
